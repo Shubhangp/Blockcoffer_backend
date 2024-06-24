@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const dataRouter = require('./routes/dataRoutes');
+const adminRouter = require('./routes/adminRoutes');
 
 const app = express();
 var cors = require('cors');
@@ -16,5 +17,6 @@ app.use((req, res, next) => {
     next();
 });
 app.use('/api/v1/industrydata', dataRouter);
+app.use('/api/v1/admin', adminRouter);
 
 module.exports = app;
